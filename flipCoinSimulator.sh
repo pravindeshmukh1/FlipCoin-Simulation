@@ -26,11 +26,11 @@ percentage
 }
 
 function percentage() {
-for  i in ${!coinDict[@]}
-do
-	coinDict[$i]=$(echo "scale=2;${coinDict[$i]}/$noOfFlip*100" | bc )
-done
-	echo "Percentage of Singlet Combination" ${coinDict[@]}
+	for  i in ${!coinDict[@]}
+	do
+		coinDict[$i]=$(echo "scale=2;${coinDict[$i]}/$noOfFlip*100" | bc )
+	done
+		echo "Percentage of Singlet Combination" ${coinDict[@]}
 }
 
 read -p "do you want to flip coin Y/N : " input
@@ -38,9 +38,9 @@ read -p "do you want to flip coin Y/N : " input
 	while [[ $input -eq "Y" && $input -eq "y" ]]
 	do
 		read -p "Enter the number of flip : " noOfFlip
-		echo -e "\n1.single \n2.double"
+		echo -e "\n1.single \n2.double \n3.triple"
 		read -p "Enter your Choice : " choice
-		if [[ $choice -eq 1 || $choice -eq 2  ]]
+		if [[ $choice -eq 1 || $choice -eq 2  || $choice -eq 3 ]]
 		then
 			filpCoin $noOfFlip $choice
 		fi
