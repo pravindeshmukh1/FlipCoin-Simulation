@@ -31,6 +31,13 @@ function percentage() {
 		coinDict[$i]=$(echo "scale=2;${coinDict[$i]}/$noOfFlip*100" | bc )
 	done
 		echo "Percentage of Singlet Combination" ${coinDict[@]}
+sortSimulator
+}
+function sortSimulator() {
+	for i in ${coinDict[@]}
+	do
+		echo $i ${coinDict[$i]}
+	done | sort -rn -k2 | head -1
 }
 
 read -p "do you want to flip coin Y/N : " input
