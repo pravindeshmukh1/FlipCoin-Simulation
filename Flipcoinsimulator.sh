@@ -13,10 +13,10 @@ declare -A coinDict
 		for ((j=1; j<=$choice; j++))
 		do
 			checkCoin=$((RANDOM%2))
-	      if [ $checkCoin -eq 0 ]
-   	   then
+	      		if [ $checkCoin -eq 0 ]
+   	      		then
 				ht+="H"
-			else
+	      		else
 				ht+="T"
 			fi
 		done
